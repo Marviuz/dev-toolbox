@@ -1,0 +1,77 @@
+---
+title: Bun
+priority: 7
+---
+
+# Bun
+
+[Bun](https://bun.sh/) is a JavaScript runtime, package manager, test runner and bundler
+built from scratch using the [Zig](https://ziglang.org/) programming language which
+is also known as **BLAZINGLY FAST** like [Rust](https://www.rust-lang.org/).
+
+It's 4x faster than [Node.js](./node) (_Even if it's not 4x, it's still faster in my experience which
+makes it a great choice simple projects like this one_).
+
+## Installation
+
+There are multiple ways to install Bun. Two of which are:
+
+- [Scoop](./scoop)
+- or through Node's package managers
+
+```sh
+# Using Scoop
+scoop install bun
+
+# Using NPM
+npm install -g bun
+```
+
+## Usage & Commands
+
+If you've used node package managers before, you'll be familiar with Bun's commands.
+
+Moving forward, we can assume some of the commands are the same as `yarn/pnpm`
+as well as the flags that are often used.
+
+### `bun add`
+
+Really similar to `yarn/pnpm add`.
+
+```sh
+bun add <package>
+```
+
+### `bun run`
+
+Really similar to `yarn/pnpm run`. We can omit `run` like `yarn/pnpm`
+
+```sh
+bun run <script>
+# or
+bun <script>
+
+# Example
+bun dev
+bun start
+```
+
+_Note: Not sure if it's only for windows, but for `build` script, we need to
+use `bun run build` instead of `bun build` or we'll encounter an error saying
+something along the lines of `bun build is used to build bun` or something._
+
+### `bun install`
+
+Really similar to `yarn/pnpm install`.
+
+```sh
+bun install <package>
+```
+
+### `bun remove`
+
+Really similar to `yarn/pnpm remove`.
+
+```sh
+bun remove <package>
+```
