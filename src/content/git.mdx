@@ -1,0 +1,210 @@
+---
+title: Git
+priority: 2
+---
+
+# Git
+
+[Git](https://git-scm.com/) is a distributed version control system. It is used to track changes in source code and manage different versions of the same project.
+
+## Installation
+
+```sh
+scoop install git
+```
+
+## Usage & Commands
+
+### `git clone`
+
+Clone a repository to your local machine.
+
+```sh
+git clone https://github.com/<your-username>/<your-repo>.git
+```
+
+### `git add`
+
+Add all changes to the staging area.
+
+```sh
+git add .
+# or
+git add -A
+```
+
+Add a specific file/directory to the staging area.
+
+```sh
+git add *filename/path*
+```
+
+_Note: "\*" stands for a wildcard and will match any file or directory._
+
+### `git restore`
+
+Restore a file/directory from the staging area (`git add`-ed file/s).
+
+```sh
+git restore --staged *filename/path*
+```
+
+May also be used to restore a file/directory from the working directory. (_"Discard changes"_)
+
+```sh
+git restore *filename/path*
+```
+
+_Note: "\*" stands for a wildcard and will match any file or directory._
+
+### `git commit`
+
+Commit all changes to the local repository.
+
+```sh
+git commit -m "commit message"
+```
+
+### `git push`
+
+Push all commits to the remote repository.
+
+```sh
+git push
+```
+
+Push a specific branch to the remote repository.
+
+```sh
+git push origin <branch-name>
+```
+
+### `git pull`
+
+Pull all commits from the remote repository.
+
+```sh
+git pull
+```
+
+Pull a specific branch from the remote repository.
+
+```sh
+git pull origin <branch-name>
+```
+
+#### Flags
+
+Flags that can be used with git pull in specific scenarios.
+
+- `--rebase`: Rebase the current branch on top of the upstream branch.
+- `--autostash`: Automatically stash/unstash changes before/after a pull.
+
+### `git rebase`
+
+Rebase the currently active branch.
+
+```sh
+git rebase <branch name>
+```
+
+```sh
+# Assuming we're we want to rebase our current
+# branch to the latest changes from the main
+git rebase main
+```
+
+If we're on a different branch, we can specify the branch name and we want
+rebase a specific branch, we can use the following command:
+
+```sh
+git rebase <branch name> <branch name>
+```
+
+### `git branch`
+
+List all branches.
+
+```sh
+git branch
+```
+
+Create a new branch.
+
+```sh
+git branch <branch name>
+```
+
+Delete a branch.
+
+```sh
+git branch -d <branch name>
+# or
+git branch -D <branch name>
+```
+
+Rename a branch.
+
+```sh
+git branch -m <old branch name> <new branch name>
+# or if we're on the branch
+git branch -m <new branch name>
+```
+
+### `git checkout`
+
+Switch to an existing branch.
+
+```sh
+git checkout <branch name>
+```
+
+### `git switch`
+
+Is a somewhat more advanced version of `git checkout`.
+
+Switch to an existing branch.
+
+```sh
+git switch <branch name>
+# it is essentially the same as
+# git checkout <branch name>
+```
+
+#### Flags
+
+Flags that can be used with git switch in specific scenarios.
+
+- `-c`: Create a new branch if it doesn't exist and switch to it. (It is essentially the same as creating a new branch branch using `git branch` and then switching to it using `git checkout`.)
+
+### `git stash`
+
+Stash changes.
+
+```sh
+git stash
+```
+
+#### Flags
+
+Flags that can be used with git stash in specific scenarios.
+
+- `-u`: Include untracked (new) files in the stash.
+
+### `git stash pop`
+
+Readd the changes from the stash.
+
+```sh
+git stash pop
+```
+
+## Development workflow
+
+1. Clone a repo using `git clone`
+2. After making changes, use `git add` to add the changes to the staging area
+3. Switch to a new branch using `git switch -c <branch name>`
+4. Make sure the `main`/`master` branch by running `git fetch origin main:main` (This command is not on the list above, as we will only use it this one time).
+   - _or if you want to update a different branch, run `git fetch origin <branch name>:<branch name>`_
+5. Use `git rebase main` to rebase the current branch on top of the `main` branch.
+6. Use `git push` to push the changes to the remote repository

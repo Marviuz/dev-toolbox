@@ -1,6 +1,8 @@
 import '@/styles/globals.css';
-
 import { type Metadata } from 'next';
+import { geist, geistMono, poppins } from '@/lib/fonts';
+import { cn } from '@/lib/utils';
+import { Footer } from '@/components/navigations/footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,8 +15,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html
+      className={cn(
+        'scroll-smooth antialiased',
+        geist.variable,
+        poppins.variable,
+        geistMono.variable,
+      )}
+      lang="en"
+    >
+      <body className="font-geist">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

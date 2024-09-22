@@ -1,0 +1,49 @@
+---
+title: Corepack
+priority: 5
+---
+
+# Corepack
+
+Corepack is a zero-runtime-dependency Node.js script that acts as a bridge between Node.js projects and the package managers they are intended to be used with during development.
+
+## Usage & Commands
+
+As of September 2024, Corepack is still bundled with Node so we don't
+need to install it. But there are plans to make it an independent package.
+
+### `corepack enable`
+
+Enable Corepack
+
+```sh
+corepack enable
+```
+
+If the `package.json` doesn't have a `packageManager` field, it will be added automatically.
+The added `packageManager` field has a dirty look value but can be manually cleaned.
+to make it look like this:
+
+```json:package.json {10}
+{
+  "name": "project",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "packageManager": "pnpm@9.10.0"
+}
+```
+
+### `corepack disable`
+
+Disable Corepack
+
+```sh
+corepack disable
+```
+
+_Note: Sometimes we may need to use a different runtime such as bun. This is the time we need to disable Corepack._

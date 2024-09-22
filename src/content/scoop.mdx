@@ -1,0 +1,75 @@
+---
+title: Scoop
+priority: 1
+---
+
+# Scoop
+
+[Scoop](https://scoop.sh/) is a command-line installer and makes it easy to install thousands of applications on the command line.
+
+We'll be using Scoop to install some of the development tools we'll need.
+
+## Installation
+
+To install Scoop, run the following command in PowerShell:
+
+```sh
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+## Usage & Commands
+
+### `scoop install`
+
+To install an app, run the following command in PowerShell:
+
+```sh
+scoop install 7zip
+```
+
+### `scoop update`
+
+To update an app, run the following command in PowerShell:
+
+```sh
+scoop update 7zip
+```
+
+To update all apps, run the following command in PowerShell:
+
+```sh
+scoop update *
+```
+
+I use this command frequently to update all apps.
+
+### `scoop uninstall`
+
+To uninstall an app, run the following command in PowerShell:
+
+```sh
+scoop uninstall 7zip
+```
+
+### `scoop list`
+
+To list all installed apps, run the following command in PowerShell:
+
+```sh
+scoop list
+```
+
+### `scoop bucket`
+
+Scoop has a built-in bucket system that allows you to install apps from a variety of sources.
+
+#### `scoop bucket add`
+
+To add a bucket, run the following command in PowerShell:
+
+```sh
+scoop bucket add extras
+```
+
+View scoop docs to see all available buckets.
