@@ -20,9 +20,10 @@ Enable Corepack
 corepack enable
 ```
 
-If the `package.json` doesn't have a `packageManager` field, it will be added automatically.
-The added `packageManager` field has a dirty look value but can be manually cleaned.
-to make it look like this:
+After enabling Corepack, and then running a command with a specific package manager,
+you will see a new `packageManager` field in your `package.json` file. If if doesn't
+have one. The added `packageManager` field has a dirty look value but can be manually
+cleaned. to make it look like this:
 
 ```json:package.json {10}
 {
@@ -37,6 +38,10 @@ to make it look like this:
   "packageManager": "pnpm@9.10.0"
 }
 ```
+
+If it already has a `packageManager` field and you tried to use a different package manager,
+the command will fail with an error message saying that the package manager you should use
+is the one that's in the `packageManager` field.
 
 ### `corepack disable`
 
