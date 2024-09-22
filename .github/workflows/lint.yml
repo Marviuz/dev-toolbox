@@ -4,7 +4,6 @@ on:
     branches:
       - '**'
       - '!production'
-      - '!main'
 
 jobs:
   format-and-lint:

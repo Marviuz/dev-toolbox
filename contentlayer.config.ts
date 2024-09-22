@@ -13,6 +13,8 @@ import { type VFile } from 'vfile';
 import { nanoid } from 'nanoid';
 import rehypeCodeTitles from 'rehype-code-titles';
 
+const isWindows = process.platform === 'win32';
+
 export const Tool = defineDocumentType(() => ({
   name: 'Tool',
   filePathPattern: `**/*.mdx`,
@@ -22,10 +24,15 @@ export const Tool = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    priority: {
-      type: 'string',
-      default: '9999',
-    },
+    priority: isWindows
+      ? {
+          type: 'string',
+          default: '9999',
+        }
+      : {
+          type: 'number',
+          default: 9999,
+        },
   },
   computedFields: {
     url: {
