@@ -6,7 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "prepare": "husky && git config --local include.path ./.gitconfig",
+    "prepare": "husky",
     "start": "next start"
   },
   "config": {
