@@ -9,7 +9,7 @@ export default function Home() {
           <span className="font-kode-mono text-7xl">DEV_TOOLBOX</span>{' '}
           <span className="text-xs font-light tracking-wider">by Marviuz</span>
         </h1>
-        <p>Stuff I use in and out of work.</p>
+        <p>Anything dev stuff I use in and out of work.</p>
         <p>
           These are only tested on <strong>Windows 10</strong>.
         </p>
