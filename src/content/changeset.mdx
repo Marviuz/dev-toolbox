@@ -1,0 +1,47 @@
+---
+title: Changesets
+priority: 6
+---
+
+# Changesets
+
+[Changesets](https://github.com/changesets/changesets) is a way to manage your versioning and changelogs
+
+## Installation
+
+More information from their [docs](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)
+
+_Note: The rest of this guide assumes you're using `npm`. But you can use `pnpm`, `yarn`
+or whatever you like._
+
+```sh
+npm install @changesets/cli && npx changeset init
+```
+
+## Usage & Commands
+
+### `npx changeset`
+
+This will start the interactive CLI to create a new changeset.
+Unlike commits, changesets are meant to be a proper english sentence.
+
+```sh
+npx changeset
+```
+
+## Versioning
+
+Versioning your app/package is usually done in the CI. In case you're
+in a situation where you don't have access to the CI, you can use the
+following commands to bump the version.
+
+1. Be sure to have the latest commit in your `main` by running `git pull`
+2. Bump the version by running `npm changeset version`. This will...
+   - Bump the version in `package.json`
+   - Create or update the `CHANGELOG.md` file
+3. Commit the changes. Preferably, use a semantic commit message.
+   - `git commit -m "chore(relase): version application"`
+4. Push the changes to the remote repository
+5. Switch to `production` branch and rebase it from `main`.
+6. Push the changes to the remote repository.
+7. And your done!
