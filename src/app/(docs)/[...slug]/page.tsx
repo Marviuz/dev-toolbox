@@ -17,7 +17,7 @@ export function generateMetadata({
 
   return {
     title: `DEV_TOOLBOX | ${tool.title}`,
-    description: `Simple usage guide for${tool.title}`,
+    description: `Simple usage guide for ${tool.title}`,
   };
 }
 
