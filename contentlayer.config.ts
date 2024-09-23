@@ -12,6 +12,7 @@ import { remark } from 'remark';
 import { type VFile } from 'vfile';
 import { nanoid } from 'nanoid';
 import rehypeCodeTitles from 'rehype-code-titles';
+import { remarkAlert } from 'remark-github-blockquote-alert';
 
 const isWindows = process.platform === 'win32';
 
@@ -58,7 +59,7 @@ export default makeSource({
   contentDirPath: 'src/content',
   documentTypes: [Tool],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkAlert],
     rehypePlugins: [
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: 'wrap' }],

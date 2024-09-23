@@ -11,8 +11,9 @@ priority: 6
 
 More information from their [docs](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)
 
-_Note: The rest of this guide assumes you're using `npm`. But you can use `pnpm`, `yarn`
-or whatever you like._
+> [!NOTE]
+> The rest of this guide assumes you're using `npm`. But you can use
+> `pnpm`, `yarn` or whatever you like.
 
 ```sh
 npm install @changesets/cli && npx changeset init
@@ -34,8 +35,6 @@ npx changeset
 Versioning your app/package is usually done in the CI. In case you're
 in a situation where you don't have access to the CI, you can use the
 following commands to bump the version.
-
-\_Note: The rest of this guide assumes you're using `npm`. But you can use `pnpm`, `yarn`
 
 1. Be sure to have the latest commit in your `main` by running `git pull`
 2. Bump the version by running `npm changeset version`. This will...
