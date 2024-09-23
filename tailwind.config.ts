@@ -46,6 +46,13 @@ const config = {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+
+        info: 'hsl(val(--info))',
+        danger: 'hsl(val(--danger))',
+        warning: 'hsl(val(--warning))',
+        important: 'hsl(val(--important))',
+        success: 'hsl(val(--success))',
+
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -131,6 +138,49 @@ const config = {
 
               '&+*': {
                 marginTop: '0.25rem',
+              },
+            },
+            '.markdown-alert': {
+              borderLeft: '4px solid var(--md-alert-color)',
+              padding: '0.5rem 1rem',
+              backgroundColor: 'hsl(var(--primary-foreground))',
+              color: 'hsl(var(--primary))',
+              borderTopRightRadius: 'calc(var(--radius) - 2px)',
+              borderBottomRightRadius: 'calc(var(--radius) - 2px)',
+              display: 'grid',
+              gap: 8,
+              '&>p': {
+                margin: 0,
+                fontWeight: 300,
+                letterSpacing: '0.025em',
+              },
+              '&>.markdown-alert-title': {
+                '&>svg': {
+                  fill: 'var(--md-alert-color)',
+                  height: 18,
+                  width: 18,
+                },
+                color: 'var(--md-alert-color)',
+                alignItems: 'center',
+                display: 'flex',
+                fontSize: 18,
+                fontWeight: 600,
+                gap: 8,
+              },
+              '&.markdown-alert-note': {
+                '--md-alert-color': 'hsl(var(--info))',
+              },
+              '&.markdown-alert-tip': {
+                '--md-alert-color': 'hsl(var(--success))',
+              },
+              '&.markdown-alert-important': {
+                '--md-alert-color': 'hsl(var(--important))',
+              },
+              '&.markdown-alert-warning': {
+                '--md-alert-color': 'hsl(var(--warning))',
+              },
+              '&.markdown-alert-caution': {
+                '--md-alert-color': 'hsl(var(--danger))',
               },
             },
           },

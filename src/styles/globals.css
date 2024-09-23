@@ -43,6 +43,12 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     --radius: 0.5rem;
+
+    --info: 216 84% 52%;
+    --danger: 1 69% 53%;
+    --warning: 40 96% 32%;
+    --important: 261 73% 62%;
+    --success: 132 59% 33%;
   }
 }
 
@@ -58,6 +64,6 @@
   }
 
   .active-scroll-spy {
-    @apply text-foreground font-medium;
+    @apply font-medium text-foreground;
   }
 }
