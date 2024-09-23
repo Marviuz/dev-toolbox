@@ -100,6 +100,30 @@ Flags that can be used with git pull in specific scenarios.
 - `--rebase`: Rebase the current branch on top of the upstream branch.
 - `--autostash`: Automatically stash/unstash changes before/after a pull.
 
+### `git log`
+
+Show the commit history.
+
+```sh
+git log
+```
+
+#### Flags
+
+Flags that can be used with git log in specific scenarios.
+
+- `--oneline`: Show the commit history in a single line.
+
+### `git reflog`
+
+I rarely use this command, but in cases like when you accidentally delete a
+branch without pushing it to the remote repository, you can use this command
+to restore the deleted branch.
+
+```sh
+git reflog
+```
+
 ### `git rebase`
 
 Rebase the currently active branch.
@@ -159,6 +183,9 @@ Switch to an existing branch.
 git checkout <branch name>
 ```
 
+We can also checkout to a specific commit by copying the commit hash from
+the commit history using `git log` or `git reflog`.
+
 ### `git switch`
 
 Is a somewhat more advanced version of `git checkout`.
@@ -170,6 +197,9 @@ git switch <branch name>
 # it is essentially the same as
 # git checkout <branch name>
 ```
+
+Unlike `git checkout`, switch can bring local changes to the branch you're
+switching to.
 
 #### Flags
 
