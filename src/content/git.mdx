@@ -238,7 +238,18 @@ git stash pop
 1. Clone a repo using `git clone`
 2. After making changes, use `git add` to add the changes to the staging area
 3. Switch to a new branch using `git switch -c <branch name>`
-4. Make sure the `main`/`master` branch by running `git fetch origin main:main` (This command is not on the list above, as we will only use it this one time).
+4. Make sure the `main`/`master` branch is updated by running `git fetch origin` (This command is not on the list above, as we will only use it this one time).
    - _or if you want to update a different branch, run `git fetch origin <branch name>:<branch name>`_
-5. Use `git rebase main` to rebase the current branch on top of the `main` branch.
+5. Use `git rebase origin/main` to rebase the current branch on top of the `main` branch.
 6. Use `git push` to push the changes to the remote repository
+
+### Reset local branch to remote
+
+If, for example, your local `staging` branch is unsynced with the remote due to
+reset, you can use the following command to reset the local branch to the
+remote branch.
+
+```sh
+git fetch origin # fetch the remote branches
+git reset --hard origin/staging
+```
